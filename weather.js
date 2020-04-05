@@ -11,7 +11,7 @@ var APIKey = "9e615fcd5c8c91df3f82d284f5941fb2";
 
 // Here we are building the URL we need to query the database
 //var queryURL = "api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&appid={your api key}=" + APIKey;
-searchWeather("Norwalk");
+searchWeather("New York");
 
 // Here we run our AJAX call to the OpenWeatherMap API
 function searchWeather(searchCity) {

@@ -16,7 +16,7 @@ searchWeather("Norwalk");
 // Here we run our AJAX call to the OpenWeatherMap API
 function searchWeather(searchCity) {
     $.ajax({
-        url: "api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&appid=" + APIKey + "",
+        url: "api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&appid=9e615fcd5c8c91df3f82d284f5941fb2",
         method: "GET"
       })
         // We store all of the retrieved data inside of an object called "response"

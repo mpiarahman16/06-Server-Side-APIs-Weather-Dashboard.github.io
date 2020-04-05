@@ -7,7 +7,7 @@ function buildQueryURL() {
 //settings.url = buildQueryURL()
 //$.ajax(settings).done(updateWeather);
 
-var APIKey = "166a433c57516f51dfab1f7edaed8413";
+var APIKey = "9e615fcd5c8c91df3f82d284f5941fb2";
 
 // Here we are building the URL we need to query the database
 //var queryURL = "api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&appid={your api key}=" + APIKey;
@@ -16,7 +16,7 @@ searchWeather("Norwalk");
 // Here we run our AJAX call to the OpenWeatherMap API
 function searchWeather(searchCity) {
     $.ajax({
-        url: "api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&appid={your api key}=" + APIKey,
+        url: "api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&appid=" + APIKey + "",
         method: "GET"
       })
         // We store all of the retrieved data inside of an object called "response"

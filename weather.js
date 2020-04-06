@@ -18,7 +18,8 @@ function searchWeather(searchCity) {
   console.log(searchCity);
   $.ajax({
         url: "http://api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&appid=9e615fcd5c8c91df3f82d284f5941fb2",
-        method: "GET"
+        method: "GET", 
+        dataType: "json",
       })
         // We store all of the retrieved data inside of an object called "response"
         .then(function(response) {

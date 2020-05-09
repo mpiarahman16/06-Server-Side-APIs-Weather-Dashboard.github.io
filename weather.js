@@ -19,14 +19,15 @@ var APIKey = "9e615fcd5c8c91df3f82d284f5941fb2";
 function searchWeather(searchCity) {
   console.log(searchCity);
   $.ajax({
-    url: "http://api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&appid=9e615fcd5c8c91df3f82d284f5941fb2",
+    url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchCity + "&appid=9e615fcd5c8c91df3f82d284f5941fb2",
     method: "GET",
     dataType: "json",
   })
 
     // We store all of the retrieved data inside of an object called "response"
     .then(function (response) {
-
+    localStorageSetter(searchCity);
+     
       // Log the resulting object
       console.log(response);
 
@@ -49,14 +50,27 @@ function searchWeather(searchCity) {
     });
 
 }
+function localStorageSetter(data) {
+const prev = localStorage.getItem("prev")
+let newData
+if (prev) {
+   newData = [...JSON.parse(prev),data]
+}
+else {
+   newData = [data]
+}
+localStorage.setItem("prev", JSON.stringify(newData));
+}
+
 function fiveDays(searchfiveDays) {
   console.log(searchfiveDays);
   $.ajax({
-    url: `http://api.openweathermap.org/data/2.5/forecast?q=${searchfiveDays}&appid=9e615fcd5c8c91df3f82d284f5941fb2`,
+    url: `https://api.openweathermap.org/data/2.5/forecast?q=${searchfiveDays}&appid=9e615fcd5c8c91df3f82d284f5941fb2`,
     method: "GET",
     dataType: "json",
   })
     .then(function (response) {
+      $("#fivedayData").empty()
       console.log(response);
       var FiveDay = []
       var fivedayList = response.list
